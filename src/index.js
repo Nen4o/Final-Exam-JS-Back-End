@@ -7,7 +7,7 @@ const path = require('path');
 
 const { isAuth } = require('./middlewares/authMiddleware');
 
-const port = 3000;
+const PORT = 3000;
 
 // config express
 const app = express();
@@ -20,16 +20,20 @@ app.use(router);
 // config handlebars
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
+    helpers: {
+        'eq': function (a, b) {
+            return a == b;
+        }
+    }
 }));
 app.set('view engine', 'hbs');
 app.set('views', './src/views');
 
 // start server
-mongoose.connect('mongodb://localhost:27017/second-hand-electronics')
+mongoose.connect('mongodb://localhost:27017/cosmic-explorer')
     .then(() => {
-        app.listen(port, () => {
+        app.listen(PORT, () => {
             console.log('DB Connected');
-            console.log('Server is listening on http://localhost:3000');
-
+            console.log('Server is listening on http://localhost:' + PORT);
         })
     })

@@ -1,54 +1,95 @@
-.search{
-    margin-bottom: 50px;
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.search h1 {
-    text-align: center;
-    font-size: 40px;
-    color: white;
-    margin-bottom: 20px;
+.search-form-container {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
 }
 
-.search-form input,
-select {
-    width: 30%;
-    color: black;
-    border-radius: 20px;
-    height: 40px;
-    border: 1px solid #fff;
-    font-size: 18px;
+.search-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
 }
 
 .search-form button {
-    position: relative;
-    padding: 0;
-    cursor: pointer;
-    height: 40px;
-    width: 120px;
-    color: black;
-    font-size: 20px;
-    border: 1px solid rgb(214, 209, 209);
-    border-radius: 20px;
-}
-
-.search-list {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.no-match {
-    background: rgba(0, 0, 0, 0.703);
-    display: inline-block;
-    width: 60%;
-    height: 100px;
-    margin-top: 5%; 
+    padding: 10px 20px;
+    background-color: #4caf50;
     color: white;
-    border: 1px solid white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
 }
 
-.no-match p {
+.search-form button:hover {
+    opacity: 0.9;
+}
+
+.search-results {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.planet-result {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #202340;
+    border-radius: 8px;
+}
+
+.planet-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.planet-info {
+    flex: 1;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.no-matches {
     font-size: 30px;
-    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    border-top: 1px solid #2c3e50;
+}
+
+.planet-info p {
+    margin-bottom: 15px;
 }

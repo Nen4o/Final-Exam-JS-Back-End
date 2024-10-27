@@ -1,11 +1,18 @@
-<section id="loginPage">
-    <form id='loginForm' method="POST">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" value="{{loginData.email}}" placeholder="Email">
+<main>
+    {{#if error}}
+    <div class="error-containers">
+            <p>{{error}}</p>
+        </div> 
+    {{/if}}
+
+    <form class="login-form" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" value="{{loginData.username}}" name="username">
 
         <label for="password">Password:</label>
-        <input type="password" id="password" value="{{loginData.password}}" name="password" placeholder="Password">
+        <input type="password" id="password" name="password">
 
-        <input type="submit" class="register" value="Login">
+        <button type="submit">Login</button>
+        <p class="signup">Don't have an account? <a href="/register">Sign up here</a></p>
     </form>
-</section>
+</main>

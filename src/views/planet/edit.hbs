@@ -1,0 +1,45 @@
+<main>
+    {{#if error}}
+    <div class="error-containers">
+        <p>{{error}}</p>
+    </div>
+    {{/if}}
+
+    <form class="edit-form" method="POST">
+        <label for="name">Name of Planet:</label>
+        <input type="text" id="name" name="name" value="{{planetData.name}}">
+
+        <label for="age">Age (in billion years):</label>
+        <input type="number" id="age" name="age" value="{{planetData.age}}">
+
+        <label for="solarSystem">Solar System:</label>
+        <input type="text" id="solarSystem" name="solarSystem" value="{{planetData.solarSystem}}">
+
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+            <option {{#if (eq planetData.type 'Inner')}} selected {{/if}} value="Inner">Inner</option>
+            <option {{#if (eq planetData.type 'Outer')}} selected {{/if}} value="Outer">Outer</option>
+            <option {{#if (eq planetData.type 'Dwarf')}} selected {{/if}} value="Dwarf">Dwarf</option>
+        </select>
+
+        <label for="moons">Moons (count):</label>
+        <input type="number" id="moons" name="moons" value="{{planetData.moons}}">
+
+        <label for="size">Size (in km):</label>
+        <input type="number" id="size" name="size" value="{{planetData.size}}">
+
+        <label for="rings">Rings:</label>
+        <select id="rings" name="rings">
+            <option {{#if (eq planetData.rings 'Yes')}} selected {{/if}} value="Yes">Yes</option>
+            <option {{#if (eq planetData.rings 'No')}} selected {{/if}} value="No">No</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4">{{planetData.description}}</textarea>
+
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image" value="{{planetData.image}}">
+
+        <button type="submit">Save Changes</button>
+    </form>
+</main>

@@ -4,11 +4,11 @@ const createUser = (registerData) => {
     return User.create(registerData);
 }
 
-const findUserByEmail = (email) => {
-    return User.findOne({ email })
+const findUserByUsername = (username) => {
+    return User.findOne({ username })
 }
 
 module.exports = {
     createUser,
-    findUserByEmail,
+    findUserByUsername,
 }

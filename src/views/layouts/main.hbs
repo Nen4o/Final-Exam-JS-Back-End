@@ -3,49 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Second Hand Electronics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Explorer</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <!-- In case of error, you should display div with class "errorContainer" -->
-    <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
-
-    {{#if error}}
-    <div>
-        <div class="errorContainer">
-            <p>{{error}}</p>
-        </div>
-    {{/if}}
-
-    <div id="container">
-
+    <header>
         <nav>
             <ul>
-                <!--For all users-->
                 <li><a href="/">Home</a></li>
-                <li><a href="#">Catalog</a></li>
+                <li><a href="/planet/catalog">Catalog</a></li>
+                <li><a href="/planet/search">Search</a></li>
                 {{#if isAuthenticated}}
-                <!--For loggin users-->
-                <li><a href="#">Create Offer</a></li>
-                <li><a href="#">Search</a></li>
+                <li><a href="/planet/create">Create</a></li>
                 <li><a href="/logout">Logout</a></li>
                 {{else}}
-                <!--For guest user-->
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
                 {{/if}}
 
             </ul>
-
         </nav>
+    </header>
 
-    
-        {{{body}}}
 
-        <footer>@SoftUni - JS Back-End - Second Hand Electronics 2023</footer>
-        </div>
-        
-        </body>
-        
-        </html>
+    {{{body}}}
+
+    <footer>
+        <p>&copy; 2024 Cosmic Explorer. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -46,8 +46,10 @@ router.post('/login', async (req, res) => {
     const loginData = req.body;
 
     try {
-        const user = await authServices.findUserByEmail(loginData.email);
-
+        const user = await authServices.findUserByUsername(loginData.username);
+        if (!user) {
+            throw new Error('There is no user with that username!');
+        }
         const isPasswordValid = await bcrypt.compare(loginData.password, user.password);
 
         if (!isPasswordValid) {
@@ -58,6 +60,8 @@ router.post('/login', async (req, res) => {
         res.cookie('auth', JWT);
         res.redirect('/');
     } catch (err) {
+        console.log(loginData);
+
         const errorMessage = err.errors ? Object.values(err.errors)[0]?.message : err.message;
         res.render('auth/login', { error: errorMessage, loginData });
     }

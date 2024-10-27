@@ -1,43 +1,45 @@
-#createPage {
-  text-align: center;
-  margin-top: 5px;
-  position: relative;
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-#createForm {
-  padding-top: 1%;
-  display: inline-block;
-  margin-top: 2%;
-  margin-bottom: 4%;
-  background: rgba(0, 0, 0, 0.703);
-  width: 40%;
-  border: 1px solid white;
-  border-radius: 20px;
+.planet-form {
+    background: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-#createForm label {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: white;
-  font-weight: bold;
+.planet-form label {
+    margin-top: 10px;
+    display: block;
 }
 
-#createForm input {
-  background: white;
-  border: 1px solid black;
-  border-radius: 10px;
-  font-size: 16px;
+.planet-form input,
+.planet-form select,
+.planet-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
 }
 
-#createForm input[type="submit"] {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  width: 40%;
-  font-size: 20px;
+.planet-form button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.planet-form button:hover {
+    background-color: #45a049;
 }
